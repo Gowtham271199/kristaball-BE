@@ -8,7 +8,10 @@ const app = express();
 // Middleware
 app.use(express.json());
 app.use(cors());
-
+app.get('/', (req, res) => {
+    res.status(200).json({ message: 'Server is running' });
+  });
+  
 // Routes
 app.use('/api/users', userRoutes);
 
